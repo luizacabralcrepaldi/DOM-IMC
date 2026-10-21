@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Calculadora de IMC</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="cabecalho">
+          <div>
+            <h1>Calculadora de IMC</h1>
+
+            <p>Cadastre pessoas e acompanhe os resultados.</p>
+          </div>
+
+          <button id="btnTema" class="btn-tema">🌙 Modo escuro</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- =========================
+             CADASTRO
+        ========================== -->
+
+      <section class="card">
+        <h2>Cadastro</h2>
+
+        <p class="descricao">Informe os dados da pessoa para calcular o IMC.</p>
+
+        <div class="campo">
+          <label for="nome"> Nome </label>
+
+          <input type="text" id="nome" placeholder="Digite o nome" />
+        </div>
+
+        <div class="linha">
+          <div class="campo">
+            <label for="peso"> Peso (kg) </label>
+
+            <input
+              type="number"
+              id="peso"
+              placeholder="Ex: 70"
+              min="1"
+              step="0.1"
+            />
+          </div>
+
+          <div class="campo">
+            <label for="altura"> Altura (cm) </label>
+
+            <input type="number" id="altura" placeholder="Ex: 170" min="1" />
+          </div>
+        </div>
+
+        <!-- BOTÕES -->
+
+        <div class="botoes">
+          <button id="btnCalcular">Calcular IMC</button>
+
+          <button id="btnLimpar" class="btn-limpar">Limpar</button>
+        </div>
+
+        <!-- RESULTADO -->
+
+        <div id="resultado" class="resultado">
+          <span> O resultado aparecerá aqui. </span>
+        </div>
+      </section>
+
+      <!-- =========================
+             PESQUISA
+        ========================== -->
+
+      <section class="card">
+        <h2>Pesquisar pessoa</h2>
+
+        <p class="descricao">Digite o nome de uma pessoa cadastrada.</p>
+
+        <div class="pesquisa">
+          <input
+            type="text"
+            id="campoPesquisa"
+            placeholder="Digite um nome..."
+          />
+
+          <button id="btnPesquisar">Pesquisar</button>
+        </div>
+
+        <div id="resultadoPesquisa" class="resultado-pesquisa"></div>
+      </section>
+
+      <!-- =========================
+             ESTATÍSTICAS
+        ========================== -->
+
+      <section class="card">
+        <h2>Estatísticas</h2>
+
+        <div class="estatisticas">
+          <div class="estatistica">
+            <span class="numero" id="mediaImc"> - </span>
+
+            <p>Média dos IMCs</p>
+          </div>
+
+          <div class="estatistica">
+            <span class="numero" id="maiorImc"> - </span>
+
+            <p>Maior IMC</p>
+          </div>
+
+          <div class="estatistica">
+            <span class="numero" id="menorImc"> - </span>
+
+            <p>Menor IMC</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+             LISTA
+        ========================== -->
+
+      <section class="card">
+        <div class="titulo-lista">
+          <div>
+            <h2>Pessoas cadastradas</h2>
+
+            <p class="descricao">Histórico dos cálculos realizados.</p>
+          </div>
+
+          <div class="contador">
+            <span id="totalPessoas"> 0 </span>
+
+            <small> pessoas </small>
+          </div>
+        </div>
+
+        <div id="listaPessoas">
+          <div class="vazio">Nenhuma pessoa cadastrada ainda.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>Projeto de JavaScript + DOM</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
